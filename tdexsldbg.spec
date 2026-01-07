@@ -55,6 +55,7 @@ BuildRequires:	trinity-tde-cmake >= %{tde_version}
 BuildRequires:	pkgconfig
 BuildRequires:  pkgconfig(icu-uc)
 BuildRequires:  pkgconfig(libxml-2.0)
+BuildRequires:  pkgconfig(libxslt)
 BuildRequires:	libtool
 
 Obsoletes:		trinity-kxsldbg < %{?epoch:%{epoch}:}%{version}-%{release}
