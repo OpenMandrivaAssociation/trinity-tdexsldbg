@@ -41,7 +41,6 @@ BuildOption:    -DCMAKE_BUILD_TYPE="RelWithDebInfo"
 BuildOption:    -DCMAKE_INSTALL_PREFIX=%{tde_prefix}
 BuildOption:    -DSHARE_INSTALL_PREFIX=%{tde_prefix}/share
 BuildOption:    -DDATA_INSTALL_DIR=%{tde_prefix}/share/apps
-BuildOption:    -DLIB_INSTALL_DIR=%{tde_prefix}/%{_lib}
 BuildOption:    -DBUILD_ALL=ON -DWITH_ALL_OPTIONS=ON
 BuildOption:    -DWITH_GCC_VISIBILITY=%{!?with_clang:ON}%{?with_clang:OFF}
 
@@ -54,6 +53,7 @@ BuildRequires:	trinity-tde-cmake >= %{tde_version}
 %{!?with_clang:BuildRequires:	gcc-c++}
 
 BuildRequires:	pkgconfig
+BuildRequires:  pkgconfig(icu-uc)
 BuildRequires:	libtool
 
 Obsoletes:		trinity-kxsldbg < %{?epoch:%{epoch}:}%{version}-%{release}
@@ -85,28 +85,28 @@ See the 'tde-trinity' and 'tdewebdev-trinity' packages for more information.
 %{tde_prefix}/share/applnk/.hidden/xsldbg.desktop
 %{tde_prefix}/share/apps/kxsldbg/kxsldbg_shell.rc
 %{tde_prefix}/share/apps/kxsldbgpart/kxsldbg_part.rc
-%lang(da) %{tde_tdedocdir}/HTML/da/kxsldbg/
-%lang(da) %{tde_tdedocdir}/HTML/da/xsldbg/
-%lang(de) %{tde_tdedocdir}/HTML/de/kxsldbg/
-%lang(en) %{tde_tdedocdir}/HTML/en/kxsldbg/
-%lang(en) %{tde_tdedocdir}/HTML/en/xsldbg/
-%lang(es) %{tde_tdedocdir}/HTML/es/kxsldbg/
-%lang(es) %{tde_tdedocdir}/HTML/es/xsldbg/
-%lang(et) %{tde_tdedocdir}/HTML/et/kxsldbg/
-%lang(et) %{tde_tdedocdir}/HTML/et/xsldbg/
-%lang(fr) %{tde_tdedocdir}/HTML/fr/kxsldbg/
-%lang(it) %{tde_tdedocdir}/HTML/it/kxsldbg/
-%lang(it) %{tde_tdedocdir}/HTML/it/xsldbg/
-%lang(nl) %{tde_tdedocdir}/HTML/nl/kxsldbg/
-%lang(nl) %{tde_tdedocdir}/HTML/nl/xsldbg/
-%lang(pt) %{tde_tdedocdir}/HTML/pt/kxsldbg/
-%lang(pt) %{tde_tdedocdir}/HTML/pt/xsldbg/
-%lang(pt_BR) %{tde_tdedocdir}/HTML/pt_BR/kxsldbg/
-%lang(pt_BR) %{tde_tdedocdir}/HTML/pt_BR/xsldbg/
-%lang(ru) %{tde_tdedocdir}/HTML/ru/kxsldbg/
-%lang(ru) %{tde_tdedocdir}/HTML/ru/xsldbg/
-%lang(sv) %{tde_tdedocdir}/HTML/sv/kxsldbg/
-%lang(sv) %{tde_tdedocdir}/HTML/sv/xsldbg/
+%lang(da) %{tde_prefix}/share/doc/tde/HTML/da/kxsldbg/
+%lang(da) %{tde_prefix}/share/doc/tde/HTML/da/xsldbg/
+%lang(de) %{tde_prefix}/share/doc/tde/HTML/de/kxsldbg/
+%lang(en) %{tde_prefix}/share/doc/tde/HTML/en/kxsldbg/
+%lang(en) %{tde_prefix}/share/doc/tde/HTML/en/xsldbg/
+%lang(es) %{tde_prefix}/share/doc/tde/HTML/es/kxsldbg/
+%lang(es) %{tde_prefix}/share/doc/tde/HTML/es/xsldbg/
+%lang(et) %{tde_prefix}/share/doc/tde/HTML/et/kxsldbg/
+%lang(et) %{tde_prefix}/share/doc/tde/HTML/et/xsldbg/
+%lang(fr) %{tde_prefix}/share/doc/tde/HTML/fr/kxsldbg/
+%lang(it) %{tde_prefix}/share/doc/tde/HTML/it/kxsldbg/
+%lang(it) %{tde_prefix}/share/doc/tde/HTML/it/xsldbg/
+%lang(nl) %{tde_prefix}/share/doc/tde/HTML/nl/kxsldbg/
+%lang(nl) %{tde_prefix}/share/doc/tde/HTML/nl/xsldbg/
+%lang(pt) %{tde_prefix}/share/doc/tde/HTML/pt/kxsldbg/
+%lang(pt) %{tde_prefix}/share/doc/tde/HTML/pt/xsldbg/
+%lang(pt_BR) %{tde_prefix}/share/doc/tde/HTML/pt_BR/kxsldbg/
+%lang(pt_BR) %{tde_prefix}/share/doc/tde/HTML/pt_BR/xsldbg/
+%lang(ru) %{tde_prefix}/share/doc/tde/HTML/ru/kxsldbg/
+%lang(ru) %{tde_prefix}/share/doc/tde/HTML/ru/xsldbg/
+%lang(sv) %{tde_prefix}/share/doc/tde/HTML/sv/kxsldbg/
+%lang(sv) %{tde_prefix}/share/doc/tde/HTML/sv/xsldbg/
 %{tde_prefix}/share/icons/hicolor/*/actions/*.png
 %{tde_prefix}/share/icons/hicolor/*/apps/*.png
 %{tde_prefix}/share/icons/locolor/*/apps/*.png
