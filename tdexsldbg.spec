@@ -57,6 +57,8 @@ BuildRequires:  pkgconfig(icu-uc)
 BuildRequires:  pkgconfig(libxml-2.0)
 BuildRequires:  pkgconfig(libxslt)
 BuildRequires:  pkgconfig(readline)
+BuildRequires:  pkgconfig(xrender)
+BuildRequires:  pkgconfig(x11)
 BuildRequires:	libtool
 
 Obsoletes:		trinity-kxsldbg < %{?epoch:%{epoch}:}%{version}-%{release}
