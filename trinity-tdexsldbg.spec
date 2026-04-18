@@ -1,12 +1,6 @@
 %bcond clang 1
 
 # TDE variables
-%define tde_epoch 2
-%if "%{?tde_version}" == ""
-%define tde_version 14.1.5
-%endif
-%define pkg_rel 2
-
 %define tde_pkg tdexsldbg
 %define tde_prefix /opt/trinity
 
@@ -20,12 +14,9 @@
 
 %define tarball_name %{tde_pkg}-trinity
 
-
-
 Name:		trinity-%{tde_pkg}
-Epoch:		%{tde_epoch}
-Version:	%{tde_version}
-Release:	%{?tde_version}_%{?!preversion:%{pkg_rel}}%{?preversion:0_%{preversion}}%{?dist}
+Version:	14.1.5
+Release:	3
 Summary:	Graphical XSLT debugger for TDE
 Group:		Applications/Multimedia
 URL:		http://www.trinitydesktop.org/
@@ -33,7 +24,7 @@ URL:		http://www.trinitydesktop.org/
 License:	GPLv2+
 
 
-Source0:		https://mirror.ppa.trinitydesktop.org/trinity/releases/R%{tde_version}/main/applications/development/%{tarball_name}-%{tde_version}%{?preversion:~%{preversion}}.tar.xz
+Source0:		https://mirror.ppa.trinitydesktop.org/trinity/releases/R%{version}/main/applications/development/%{tarball_name}-%{version}.tar.xz
 
 BuildSystem:    cmake
 
@@ -44,11 +35,11 @@ BuildOption:    -DDATA_INSTALL_DIR=%{tde_prefix}/share/apps
 BuildOption:    -DBUILD_ALL=ON -DWITH_ALL_OPTIONS=ON
 BuildOption:    -DWITH_GCC_VISIBILITY=%{!?with_clang:ON}%{?with_clang:OFF}
 
-BuildRequires:	trinity-tdelibs-devel >= %{tde_version}
-BuildRequires:	trinity-tdebase-devel >= %{tde_version}
+BuildRequires:	trinity-tdelibs-devel >= %{version}
+BuildRequires:	trinity-tdebase-devel >= %{version}
 BuildRequires:	desktop-file-utils
 
-BuildRequires:	trinity-tde-cmake >= %{tde_version}
+BuildRequires:	trinity-tde-cmake >= %{version}
 
 %{!?with_clang:BuildRequires:	gcc-c++}
 
@@ -61,8 +52,8 @@ BuildRequires:  pkgconfig(xrender)
 BuildRequires:  pkgconfig(x11)
 BuildRequires:	libtool
 
-Obsoletes:		trinity-kxsldbg < %{?epoch:%{epoch}:}%{version}-%{release}
-Provides:		trinity-kxsldbg = %{?epoch:%{epoch}:}%{version}-%{release}
+Obsoletes:		trinity-kxsldbg < %{EVRD}
+Provides:		trinity-kxsldbg = %{EVRD}
 
 %description
 KXSLDbg is a debugger for XSLT scripts. It includes a graphical user
