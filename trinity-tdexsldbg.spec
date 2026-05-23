@@ -10,13 +10,13 @@
 %define _disable_rebuild_configure 1
 
 # fixes error: Empty %files file …/debugsourcefiles.list
-%define _debugsource_template %{nil}
+%undefine _debugsource_template
 
 %define tarball_name %{tde_pkg}-trinity
 
 Name:		trinity-%{tde_pkg}
-Version:	14.1.5
-Release:	3
+Version:	14.1.6
+Release:	1
 Summary:	Graphical XSLT debugger for TDE
 Group:		Applications/Multimedia
 URL:		http://www.trinitydesktop.org/
@@ -37,9 +37,9 @@ BuildOption:    -DWITH_GCC_VISIBILITY=%{!?with_clang:ON}%{?with_clang:OFF}
 
 BuildRequires:	trinity-tdelibs-devel >= %{version}
 BuildRequires:	trinity-tdebase-devel >= %{version}
-BuildRequires:	desktop-file-utils
-
 BuildRequires:	trinity-tde-cmake >= %{version}
+
+BuildRequires:	desktop-file-utils
 
 %{!?with_clang:BuildRequires:	gcc-c++}
 
@@ -66,6 +66,9 @@ using standard XSLT stylesheets.
 
 This package is part of TDE, as a component of the TDE web development module.
 See the 'tde-trinity' and 'tdewebdev-trinity' packages for more information.
+
+%patchlist
+trinity-tdexsldbg-fix-cflags.patch
 
 
 %install -a

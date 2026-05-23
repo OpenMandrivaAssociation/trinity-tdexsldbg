@@ -1,0 +1,12 @@
+diff -up trinity-tdexsldbg-14.1.6/src/kxsldbgpart/libxsldbg/CMakeLists.txt.omv trinity-tdexsldbg-14.1.6/src/kxsldbgpart/libxsldbg/CMakeLists.txt
+--- trinity-tdexsldbg-14.1.6/src/kxsldbgpart/libxsldbg/CMakeLists.txt.omv	2026-05-22 23:36:59.176707215 -0400
++++ trinity-tdexsldbg-14.1.6/src/kxsldbgpart/libxsldbg/CMakeLists.txt	2026-05-22 23:37:10.684841868 -0400
+@@ -17,7 +17,7 @@ link_directories(
+   ${TDE_LIB_DIR}
+ )
+ 
+-add_compile_options( ${ICU_CXXFLAGS} )
++# add_compile_options( ${ICU_CXXFLAGS} )
+ 
+ ##### xsldbg (static)
+ 
